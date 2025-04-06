@@ -1,0 +1,38 @@
+# AI-Driven-Customer-Support
+AI-Driven Customer Support: Enhancing Efficiency Through Multi-agents
+import random
+ import time
+from threading import Thread, Lock
+class CustomerSupportAgent:
+def__init_(self, agent_id):
+self.agent_id = agent_id
+self.lock = Lock)
+def respond_to_query(self, query):
+with self.lock:
+response_time = random.uniform(1, 3) # Simulate response time
+time.sleep(response_time)
+return f"Agent {self.agent_id) responds: {query} has been addressed."
+class CustomerSupportSystem:
+definit_ (self, num_agents):
+self.agents = [CustomerSupportAgenti) for i in range(num_agents)]
+def handle_customer_query(self, query):
+agent = random.choice(self.agents)
+ response = agent.respond_to_query(query)
+return r e s p o n s e
+def simulate_customer_queries(system, queries):
+for query in queries:
+response = system.handle_customer_query(query)
+print(response)
+if__name_ _=="__main_":
+n u m _agents = 5
+queries = [
+"What is the status of my order?",
+"How can I reset my password?",
+"Where can I find my invoice?"
+"What are your business hours?",
+"Can I change my shipping address?"
+]
+support_system = CustomerSupportSystem(num_agents)
+query_thread = Thread (target=simulate_customer_queries, args=(support_system, queries))
+query_thread.start()
+query_thread.join()
