@@ -35,4 +35,4 @@ queries = [
 support_system = CustomerSupportSystem(num_agents)
 query_thread = Thread (target=simulate_customer_queries, args=(support_system, queries))
 query_thread.start()
-query_thread.join()
+query_thread.join() 
